@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    // Days: locked days are immutable except for ticking tasks or expiring
+    match /users/{uid}/days/{dayId} {
+      allow read: if isOwner(uid);
+      allow create: if isOwner(uid);
+      allow update: if isOwner(uid) && (
+        resource.data.status == 'unlocked' ||
+        (resource.data.status == 'locked' && (
+          request.resource.data.status == 'expired' ||
+          (request.resource.data.tasks.size() == resource.data.tasks.size() &&
+           request.resource.data.status == 'locked')
+        ))
+      );
+    }
+
+    // Backlog: full owner CRUD
+    match /users/{uid}/backlog/{itemId} {
+      allow read, write: if isOwner(uid);
+    }
+
+    // Recurring tasks: full owner CRUD
+    match /users/{uid}/recurring/{itemId} {
+      allow read, write: if isOwner(uid);
+    }
+  }
+}

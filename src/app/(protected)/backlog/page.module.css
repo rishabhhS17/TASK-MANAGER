@@ -1,0 +1,76 @@
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-3xl);
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  gap: var(--space-3xl);
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-lg);
+}
+
+.title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: var(--leading-xl);
+  letter-spacing: -0.5px;
+}
+
+.count {
+  font-size: var(--text-body-sm);
+  color: var(--color-body);
+}
+
+.lockedNote {
+  font-size: var(--text-body-sm);
+  color: var(--color-body);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-canvas-soft);
+  border-radius: var(--radius-lg);
+  border-left: 2px solid var(--color-hairline-mid);
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  text-align: center;
+  padding: var(--space-3xl);
+}
+
+.emptyIcon {
+  font-size: 32px;
+  color: var(--color-body);
+}
+
+.emptyText {
+  font-size: var(--text-body-md);
+  color: var(--color-body);
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: var(--space-lg);
+  }
+
+  .title {
+    font-size: var(--text-md);
+    line-height: var(--leading-md);
+  }
+}

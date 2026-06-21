@@ -1,0 +1,49 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  padding: var(--space-lg) var(--space-2xl);
+  background: var(--color-canvas-soft);
+  border-radius: var(--radius-xl);
+  transition: background 0.15s ease;
+}
+
+.item:hover {
+  background: var(--color-canvas-softer);
+}
+
+.name {
+  font-size: var(--text-body-md);
+  color: var(--color-ink);
+  font-weight: 400;
+  word-break: break-word;
+  min-width: 0;
+  flex: 1;
+}
+
+.deleteBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: transparent;
+  color: var(--color-mute);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.deleteBtn:hover {
+  color: var(--color-ink);
+  background: var(--color-canvas-softer);
+}
+
+.deleteBtn:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
+}

@@ -1,0 +1,137 @@
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-3xl);
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  gap: var(--space-3xl);
+}
+
+/* ── Header ────────────────────────────────────── */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.date {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: var(--leading-xl);
+  letter-spacing: -0.5px;
+  color: var(--color-ink);
+}
+
+.progress {
+  font-size: var(--text-body-sm);
+  color: var(--color-body);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Body ──────────────────────────────────────── */
+
+.body {
+  display: flex;
+  gap: var(--space-3xl);
+  align-items: flex-start;
+}
+
+/* ── Task section ──────────────────────────────── */
+
+.taskSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+  min-width: 0;
+}
+
+.card {
+  background: var(--color-canvas-soft);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.locked .card {
+  border-color: var(--color-hairline-mid);
+}
+
+.taskList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.empty {
+  font-size: var(--text-body-sm);
+  color: var(--color-mute);
+  padding: var(--space-md) 0;
+}
+
+/* ── Lock area ─────────────────────────────────── */
+
+.lockArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.hint {
+  font-size: var(--text-body-sm);
+  color: var(--color-mute);
+}
+
+/* ── Sidebar ───────────────────────────────────── */
+
+.sidebar {
+  flex-shrink: 0;
+}
+
+/* ── Loading ───────────────────────────────────── */
+
+.loading {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingText {
+  font-size: var(--text-body-sm);
+  color: var(--color-mute);
+}
+
+/* ── Responsive ────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .page {
+    padding: var(--space-lg);
+    gap: var(--space-2xl);
+  }
+
+  .body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .date {
+    font-size: var(--text-md);
+    line-height: var(--leading-md);
+  }
+}

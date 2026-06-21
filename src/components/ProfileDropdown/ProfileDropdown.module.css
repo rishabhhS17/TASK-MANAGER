@@ -1,0 +1,154 @@
+.container {
+  position: relative;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* ── Avatar button ── */
+.avatarBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-canvas-softer);
+  border: 1.5px solid var(--color-hairline-mid);
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  padding: 0;
+}
+
+.avatarBtn:hover {
+  border-color: var(--color-body);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.06);
+}
+
+.avatarBtn[aria-expanded='true'] {
+  border-color: var(--color-ink);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.1);
+}
+
+.avatarImg {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  display: block;
+}
+
+.initials {
+  font-size: var(--text-caption);
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+
+/* ── Dropdown panel ── */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 240px;
+  background: var(--color-canvas-soft);
+  border: 1px solid var(--color-hairline-mid);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-2);
+  padding: var(--space-sm);
+  z-index: 200;
+  animation: dropIn 0.12s ease;
+}
+
+@keyframes dropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Profile header ── */
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+}
+
+.avatarLarge {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-canvas-softer);
+  border: 1.5px solid var(--color-hairline-mid);
+  font-size: var(--text-body-sm);
+}
+
+.avatarImgLarge {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  display: block;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.profileName {
+  font-size: var(--text-body-sm);
+  font-weight: 600;
+  color: var(--color-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profileEmail {
+  font-size: var(--text-caption);
+  color: var(--color-body);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--color-hairline-mid);
+  margin: var(--space-xs) 0;
+}
+
+/* ── Sign out button ── */
+.signOutBtn {
+  width: 100%;
+  text-align: left;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-body-sm);
+  font-weight: 500;
+  color: var(--color-body);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.signOutBtn:hover {
+  background: var(--color-canvas-softer);
+  color: var(--color-ink);
+}
