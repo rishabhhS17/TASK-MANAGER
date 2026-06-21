@@ -4,8 +4,8 @@ import {
   signOut as firebaseSignOut,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  FirebaseError,
 } from 'firebase/auth'
+import { FirebaseError } from 'firebase/app'
 import { getFirebaseAuth } from './firebase'
 
 const googleProvider = new GoogleAuthProvider()
